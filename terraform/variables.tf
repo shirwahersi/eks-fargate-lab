@@ -49,20 +49,3 @@ variable "cluster_version" {
   type        = string
   description = "Kubernetes version to use for the EKS cluster.	"
 }
-
-# variable "map_roles" {
-#   description = "Additional IAM roles to add to the aws-auth configmap."
-#   type = list(object({
-#     rolearn  = string
-#     username = string
-#     groups   = list(string)
-#   }))
-
-#   default = [
-#     {
-#       rolearn  = "rolearn: arn:aws:iam::414336264239:role/shirwalab-eks-dev-fargate-execution-role"
-#       username = "system:node:{{SessionName}}"
-#       groups   = ["system:bootstrappers", "system:nodes", "system:node-proxier"]
-#     },
-#   ]
-# }
