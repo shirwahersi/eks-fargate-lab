@@ -13,7 +13,7 @@ locals {
 }
 
 locals {
-  map_roles = [
+  fargate_execution_aws_auth = [
     {
       rolearn  = module.FargateExecutionRole.this_iam_role_arn
       username = "system:node:{{SessionName}}"
@@ -95,7 +95,7 @@ module "eks" {
       }
     }
   }
-  map_roles                   = local.map_roles
+  map_roles                   = local.fargate_execution_aws_auth
 
   tags = {
     environment               = var.environment
